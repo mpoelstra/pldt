@@ -1,0 +1,97 @@
+:host {
+  display: block;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.stage-graphic-panel {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 49.8%, rgba(255, 255, 255, 0.11) 50%, rgba(255, 255, 255, 0.03) 50.2%),
+    linear-gradient(180deg, rgba(18, 31, 18, 0.96), rgba(9, 18, 9, 0.94));
+}
+
+.stage-split-grid {
+  display: grid;
+  min-height: 19rem;
+  grid-template-columns: 1fr;
+}
+
+.stage-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+}
+
+.stage-side--off {
+  color: color-mix(in srgb, var(--accent) 72%, white);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+}
+
+.stage-side--on {
+  background:
+    radial-gradient(circle at center, rgba(13, 242, 13, 0.1), transparent 55%),
+    linear-gradient(180deg, rgba(13, 242, 13, 0.05), rgba(13, 242, 13, 0.015));
+  box-shadow: inset 0 0 30px rgba(13, 242, 13, 0.05);
+}
+
+.stage-icon-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 1rem;
+}
+
+.stage-icon-frame--off {
+  border: 2px dashed color-mix(in srgb, var(--accent) 26%, transparent);
+  color: color-mix(in srgb, var(--accent) 28%, white);
+}
+
+.stage-icon-frame--on {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 18px rgba(13, 242, 13, 0.22);
+}
+
+.stage-icon-symbol {
+  font-size: 4rem;
+}
+
+.stage-title {
+  font-size: clamp(1.35rem, 1.8vw, 2rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.stage-copy {
+  max-width: 18rem;
+  font-size: clamp(0.9rem, 1vw, 1.05rem);
+  line-height: 1.4;
+}
+
+.stage-copy--bright {
+  color: color-mix(in srgb, var(--accent) 72%, white);
+}
+
+.level-insight-copy {
+  font-size: clamp(1.25rem, 1.8vw, 1.7rem);
+  line-height: 1.6;
+}
+
+.level-insight-cta {
+  padding: 0.8rem 1rem;
+}
+
+@media (min-width: 900px) {
+  .stage-split-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

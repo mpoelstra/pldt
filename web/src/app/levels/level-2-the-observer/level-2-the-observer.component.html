@@ -1,0 +1,115 @@
+<section class="panel hero-panel overflow-hidden p-5 lg:p-6 observer-header-panel">
+  <div class="space-y-4">
+    <div class="flex flex-wrap items-center gap-3">
+      <span class="status-pill">{{ level.levelLabel }}</span>
+      <span class="status-pill muted">{{ level.region }}</span>
+    </div>
+
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent-soft)] lg:text-sm">
+        {{ level.subtitle }}
+      </p>
+      <h2 class="mt-2 text-3xl font-black uppercase leading-none tracking-[0.02em] text-[var(--accent)] lg:text-5xl">
+        {{ level.title }}
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="panel observer-visual-panel">
+  <div class="observer-visual">
+    <div class="observer-window-dots" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="observer-room">
+      <div class="observer-monitor"></div>
+      <div class="observer-frame observer-frame--left"></div>
+      <div class="observer-frame observer-frame--right"></div>
+      <div class="observer-desk"></div>
+      <div class="observer-desk-base"></div>
+    </div>
+
+    <div class="observer-overlay-card">
+      <div class="observer-overlay-card__top">
+        <span class="material-symbols-outlined observer-overlay-card__icon observer-overlay-card__icon--active">
+          person_pin_circle
+        </span>
+        <span class="observer-overlay-card__divider"></span>
+        <span class="material-symbols-outlined observer-overlay-card__icon observer-overlay-card__icon--muted">
+          groups
+        </span>
+      </div>
+      <p class="observer-overlay-card__label">Position: Elevated Observation</p>
+    </div>
+  </div>
+</section>
+
+<section class="panel observer-insight-panel p-5 lg:p-6">
+  <div class="mb-5 flex items-center gap-3 text-[var(--accent)]">
+    <span class="material-symbols-outlined text-2xl lg:text-3xl">workspace_premium</span>
+    <h3 class="text-base font-black uppercase tracking-[0.24em]">Level Insight</h3>
+  </div>
+
+  <div class="level-insight-copy observer-insight-copy">
+    <p>
+      <span class="mr-3 inline-block font-black text-[var(--accent)]">&gt;</span>
+      Persoonlijk leiderschap begint voor mij nu veel meer bij
+      <span class="brain-highlight font-black">bewust waarnemen</span>. Ik ben me sterker bewust
+      van de situatie, van wat ik zelf doe en zeg, en van hoe de ander daarop reageert.
+    </p>
+
+    <p>
+      In de training heb ik geleerd om als het ware
+      <span class="brain-highlight brain-highlight--soft">van achter de stoel</span>
+      naar mezelf en de interactie te kijken: wat gebeurt hier nu eigenlijk, wat vraagt dit moment
+      en welke actie past daar dan echt bij, in plaats van automatisch te reageren.
+    </p>
+  </div>
+
+  <div class="mt-6 flex items-center justify-end gap-4 lg:mt-8">
+    <div class="hidden text-xs font-black uppercase tracking-[0.22em] text-[var(--accent-soft)] md:flex">
+      <span class="border border-[var(--accent)]/40 px-2 py-1">Space</span>
+      <span class="ml-3 self-center">to continue</span>
+    </div>
+
+    <a class="game-button game-button--primary level-insight-cta" [routerLink]="['/', nextLevel.slug]">
+      Start {{ nextLevel.levelLabel }}
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<section class="observer-stats-grid">
+  <article class="panel observer-stat-card">
+    <div class="observer-stat-icon">
+      <span class="material-symbols-outlined">psychology</span>
+    </div>
+    <div>
+      <p class="observer-stat-label">Complexity</p>
+      <h4 class="observer-stat-value">Medium Priority</h4>
+    </div>
+  </article>
+
+  <article class="panel observer-stat-card">
+    <div class="observer-stat-icon">
+      <span class="material-symbols-outlined">timer</span>
+    </div>
+    <div>
+      <p class="observer-stat-label">Duration</p>
+      <h4 class="observer-stat-value">Infinite Loop</h4>
+    </div>
+  </article>
+
+  <article class="panel observer-stat-card">
+    <div class="observer-stat-icon">
+      <span class="material-symbols-outlined">emoji_events</span>
+    </div>
+    <div>
+      <p class="observer-stat-label">Reward</p>
+      <h4 class="observer-stat-value">+500 Insights</h4>
+    </div>
+  </article>
+</section>

@@ -1,0 +1,131 @@
+<section class="panel hero-panel overflow-hidden p-5 lg:p-6">
+  <div class="space-y-4">
+    <div class="flex flex-wrap items-center gap-3">
+      <span class="status-pill">{{ level().levelLabel }}</span>
+      <span class="status-pill muted">{{ level().region }}</span>
+    </div>
+
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent-soft)] lg:text-sm">
+        {{ level().subtitle }}
+      </p>
+      <h2 class="mt-2 text-3xl font-black uppercase leading-none tracking-[0.02em] text-[var(--accent)] lg:text-5xl">
+        {{ level().title }}
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="panel hero-panel overflow-hidden p-6 lg:p-8">
+  <div class="hero-grid hero-grid--split grid gap-8 xl:items-start">
+    <div class="space-y-5">
+      <blockquote class="quote-box">
+        “{{ level().quote }}”
+      </blockquote>
+
+      <p class="max-w-3xl text-base leading-7 text-white/80 lg:text-lg">
+        {{ level().mission }}
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <a
+          class="game-button"
+          [class.pointer-events-none]="!previousLevel()"
+          [class.opacity-45]="!previousLevel()"
+          [routerLink]="previousLevel() ? ['/', previousLevel()!.slug] : null"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+          Vorige
+        </a>
+
+        <a
+          class="game-button game-button--primary"
+          [class.pointer-events-none]="!nextLevel()"
+          [class.opacity-45]="!nextLevel()"
+          [routerLink]="nextLevel() ? ['/', nextLevel()!.slug] : null"
+        >
+          Volgende
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="panel panel--compact">
+      <p class="text-xs font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+        Main Quest
+      </p>
+      <h3 class="mt-2 text-2xl font-black uppercase text-white">{{ level().challengeTitle }}</h3>
+      <p class="mt-3 text-sm leading-6 text-white/70">
+        {{ level().challengeText }}
+      </p>
+
+      <div class="accent-box mt-6 rounded p-4">
+        <p class="text-xs font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+          Region
+        </p>
+        <p class="mt-1 text-sm font-semibold text-[var(--accent)]">{{ level().region }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="grid gap-6 xl:grid-cols-[minmax(0,1.1fr)_minmax(18rem,0.9fr)]">
+  <section class="panel p-6">
+    <div class="flex items-center justify-between gap-4">
+      <div>
+        <p class="text-xs font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+          Core Mission
+        </p>
+        <h3 class="mt-1 text-2xl font-black uppercase text-white">{{ level().quest }}</h3>
+      </div>
+      <span class="material-symbols-outlined icon-ghost hidden text-5xl md:block">
+        terminal
+      </span>
+    </div>
+
+    <div class="mt-6 grid gap-4 md:grid-cols-3">
+      @for (mechanic of level().mechanics; track mechanic.title) {
+        <article class="mechanic-card">
+          <div class="mechanic-icon">
+            <span class="material-symbols-outlined">{{ mechanic.icon }}</span>
+          </div>
+          <h4 class="mt-4 text-sm font-black uppercase tracking-[0.18em] text-[var(--accent)]">
+            {{ mechanic.title }}
+          </h4>
+          <p class="mt-3 text-sm leading-6 text-white/72">
+            {{ mechanic.description }}
+          </p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <div class="space-y-6">
+    <section class="panel p-6">
+      <p class="text-xs font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+        Narrative Log
+      </p>
+      <div class="mt-4 space-y-4">
+        @for (entry of level().narrative; track entry) {
+          <div class="narrative-entry rounded p-4 text-sm leading-6 text-white/78">
+            {{ entry }}
+          </div>
+        }
+      </div>
+    </section>
+
+    <section class="panel p-6">
+      <p class="text-xs font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+        Loot & Skills
+      </p>
+      <div class="mt-4 grid gap-3">
+        @for (item of level().loot; track item) {
+          <div class="flex items-center gap-3 rounded border border-white/10 bg-black/25 px-4 py-3">
+            <span class="material-symbols-outlined text-[var(--accent)]">stars</span>
+            <span class="text-sm font-semibold text-white/88">{{ item }}</span>
+          </div>
+        }
+      </div>
+    </section>
+  </div>
+</div>

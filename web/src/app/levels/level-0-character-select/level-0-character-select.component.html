@@ -1,0 +1,55 @@
+<section class="panel hero-panel overflow-hidden p-5 lg:p-6">
+  <div class="space-y-4">
+    <div class="flex flex-wrap items-center gap-3">
+      <span class="status-pill">{{ level.levelLabel }}</span>
+      <span class="status-pill muted">{{ level.region }}</span>
+    </div>
+
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent-soft)] lg:text-sm">
+        {{ level.subtitle }}
+      </p>
+      <h2
+        class="mt-2 text-3xl font-black uppercase leading-none tracking-[0.02em] text-[var(--accent)] lg:text-5xl"
+      >
+        {{ level.title }}
+      </h2>
+    </div>
+
+    <blockquote class="quote-box level-0-quote">
+      “{{ level.quote }}”
+    </blockquote>
+  </div>
+</section>
+
+<section class="panel level-0-brain-panel p-5 lg:p-6">
+  <div class="mb-5 flex items-center gap-3 text-[var(--accent)]">
+    <span class="material-symbols-outlined text-2xl lg:text-3xl">neurology</span>
+    <h3 class="text-base font-black uppercase tracking-[0.24em]">Breinpositie</h3>
+  </div>
+
+  <div class="space-y-5 text-lg leading-[1.55] text-white/92 lg:text-[1.7rem] lg:leading-[1.45]">
+    <p>
+      <span class="mr-3 inline-block font-black text-[var(--accent)]">&gt;</span>
+      Ik ben een betrouwbare <span class="brain-highlight font-black">Practice Lead</span> die zijn vak verstaat.
+    </p>
+    <p>Vanuit inhoudelijke expertise geef ik richting, bied ik ruimte en coach ik mijn team.</p>
+    <p>
+      Door goed te luisteren en tijdig te sturen, help ik mensen zich te ontwikkelen tot de
+      <span class="brain-highlight brain-highlight--soft">beste versie van zichzelf</span>.
+    </p>
+    <p>Zo behalen we samen het beste resultaat – als mens én als team.</p>
+  </div>
+
+  <div class="mt-6 flex items-center justify-end gap-4 lg:mt-8">
+    <div class="hidden text-xs font-black uppercase tracking-[0.22em] text-[var(--accent-soft)] md:flex">
+      <span class="border border-[var(--accent)]/40 px-2 py-1">Space</span>
+      <span class="ml-3 self-center">to continue</span>
+    </div>
+
+    <a class="game-button game-button--primary level-0-cta" [routerLink]="['/', nextLevel.slug]">
+      Start Level 1
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+</section>

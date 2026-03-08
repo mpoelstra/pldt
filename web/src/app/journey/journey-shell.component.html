@@ -1,0 +1,162 @@
+<div
+  class="app-shell min-h-screen"
+  [class.theme-danger]="currentLevel().theme === 'danger'"
+  [class.theme-victory]="currentLevel().theme === 'victory'"
+>
+  <div class="scanline-overlay" aria-hidden="true"></div>
+
+  <header class="sticky top-0 z-20 border-b border-white/10 bg-[rgba(5,12,5,0.86)] backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-6">
+      <div class="flex items-center gap-3 text-[var(--accent)]">
+        <span class="material-symbols-outlined text-3xl">videogame_asset</span>
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.3em] text-[var(--accent-soft)]">
+            Leadership Quest OS
+          </p>
+          <h1 class="text-lg font-black uppercase tracking-[0.08em]">
+            {{ currentLevel().levelLabel }}: {{ currentLevel().title }}
+          </h1>
+        </div>
+      </div>
+
+      <div class="hidden items-center gap-4 lg:flex">
+        <div class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-right">
+          <p class="text-[10px] font-bold uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+            Quick Controls
+          </p>
+          <p class="text-sm font-semibold text-white/90">← vorige · → volgende · Home / End</p>
+        </div>
+
+        <div class="w-36">
+          <div class="mb-1 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+            <span>Progress</span>
+            <span>{{ progressLabel() }}</span>
+          </div>
+
+          <div class="h-3 overflow-hidden border border-white/10 bg-black/40">
+            <div class="progress-bar h-full bg-[var(--accent)]" [style.width]="progressWidth()"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto grid max-w-7xl gap-6 px-4 py-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:px-6">
+    <aside class="space-y-6">
+      @if (currentLevel().id === 0) {
+        <section class="panel p-5">
+          <div class="character-card">
+            <div class="character-frame">
+              @if (currentLevel().avatarImageUrl; as avatarImageUrl) {
+                <img
+                  class="character-sprite"
+                  [src]="avatarImageUrl"
+                  alt="Pixel art avatar van de Practice Lead"
+                />
+              }
+              <div class="character-level-tag">{{ currentLevel().levelLabel }}</div>
+            </div>
+
+            <div class="mt-5 text-center">
+              <h2 class="character-name text-[var(--accent)]">
+                Practice Lead
+              </h2>
+              <p class="character-class-label mt-2">
+                Class: {{ currentLevel().classLabel }}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel p-5">
+          <div class="mb-4 flex items-center justify-between border-b border-[var(--accent)]/20 pb-3">
+            <h2 class="text-sm font-black uppercase tracking-[0.24em] text-[var(--accent)]">Stats</h2>
+            <span class="material-symbols-outlined text-[var(--accent)]">equalizer</span>
+          </div>
+
+          <div class="space-y-5">
+            @for (stat of currentLevel().stats; track stat.label) {
+              <div>
+                <div class="mb-2 flex items-center justify-between gap-3 text-white/90">
+                  <span class="text-xs font-black uppercase tracking-[0.16em]">{{ stat.label }}</span>
+                  <span class="text-xs font-black text-white">{{ stat.value }}</span>
+                </div>
+
+                <div class="stat-track">
+                  <div class="stat-fill" [style.width.%]="stat.progress ?? 0"></div>
+                </div>
+              </div>
+            }
+          </div>
+        </section>
+      } @else {
+        <section class="panel p-5">
+          <div class="character-card">
+            <div class="character-frame character-frame--compact">
+              @if (currentLevel().avatarImageUrl; as avatarImageUrl) {
+                <img
+                  class="character-sprite character-sprite--compact"
+                  [src]="avatarImageUrl"
+                  alt="Pixel art avatar van de Practice Lead"
+                />
+              }
+              <div class="character-level-tag character-level-tag--compact">{{ currentLevel().levelLabel }}</div>
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="character-name text-[var(--accent)]">Practice Lead</h2>
+              <p class="character-class-label mt-2">
+                Class: {{ currentLevel().classLabel }}
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-5 space-y-3">
+            @for (stat of currentLevel().stats; track stat.label) {
+              <div class="rounded border border-white/10 bg-black/25 p-3">
+                <div class="mb-1 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-2 text-white/90">
+                    <span class="material-symbols-outlined text-[var(--accent)]">{{ stat.icon }}</span>
+                    <span class="text-xs font-black uppercase tracking-[0.2em]">{{ stat.label }}</span>
+                  </div>
+
+                  <span class="text-xs font-semibold text-[var(--accent)]">{{ stat.value }}</span>
+                </div>
+              </div>
+            }
+          </div>
+        </section>
+      }
+
+    </aside>
+
+    <section class="space-y-6">
+      <router-outlet />
+    </section>
+
+    <section class="panel jump-bar jump-bar--bottom p-4 lg:col-span-2">
+      <div class="mb-3 flex items-center justify-between gap-3">
+        <div>
+          <p class="text-[10px] font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+            Level Select
+          </p>
+          <h2 class="text-sm font-black uppercase text-white">Jump direct</h2>
+        </div>
+        <span class="material-symbols-outlined text-xl text-[var(--accent)]">map</span>
+      </div>
+
+      <nav class="jump-bar__nav" aria-label="Level selection">
+        @for (level of levels; track level.slug) {
+          <a
+            class="level-link jump-bar__link"
+            [class.active]="level.slug === currentLevel().slug"
+            [routerLink]="['/', level.slug]"
+          >
+            <span class="text-[10px] font-black uppercase tracking-[0.2em]">{{ level.levelLabel }}</span>
+            <span class="mt-1 block text-base font-semibold leading-tight">{{ level.title }}</span>
+          </a>
+        }
+      </nav>
+    </section>
+  </main>
+</div>

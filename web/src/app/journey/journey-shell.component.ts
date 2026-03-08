@@ -7,20 +7,19 @@ import {
   inject,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
-import { map } from 'rxjs';
+import { Router, RouterLink, RouterOutlet, NavigationEnd } from '@angular/router';
+import { filter, map, merge, of } from 'rxjs';
 
 import { FIRST_LEVEL_SLUG, JOURNEY_LEVELS, JourneyLevel } from './journey-data';
 
 @Component({
-  selector: 'app-journey-presentation',
-  imports: [CommonModule, RouterLink],
+  selector: 'app-journey-shell',
+  imports: [CommonModule, RouterLink, RouterOutlet],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './journey-presentation.component.html',
-  styleUrl: './journey-presentation.component.scss',
+  templateUrl: './journey-shell.component.html',
+  styleUrl: './journey-shell.component.scss',
 })
-export class JourneyPresentationComponent {
-  private readonly route = inject(ActivatedRoute);
+export class JourneyShellComponent {
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
   private readonly document = inject(DOCUMENT);
@@ -29,8 +28,17 @@ export class JourneyPresentationComponent {
   readonly totalLevels = JOURNEY_LEVELS.length;
 
   private readonly currentSlug = toSignal(
-    this.route.paramMap.pipe(
-      map((params: ParamMap) => params.get('slug') ?? FIRST_LEVEL_SLUG),
+    merge(
+      of(this.router.url),
+      this.router.events.pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        map(() => this.router.url),
+      ),
+    ).pipe(
+      map((url) => {
+        const trimmedUrl = url.replace(/^\//, '').split('?')[0];
+        return trimmedUrl || FIRST_LEVEL_SLUG;
+      }),
     ),
     { initialValue: FIRST_LEVEL_SLUG },
   );
@@ -56,6 +64,7 @@ export class JourneyPresentationComponent {
 
   readonly progressLabel = computed(() => `${this.currentIndex() + 1}/${this.totalLevels}`);
   readonly progressWidth = computed(() => `${((this.currentIndex() + 1) / this.totalLevels) * 100}%`);
+
   constructor() {
     const handleKeydown = (event: KeyboardEvent): void => {
       const target = event.target;

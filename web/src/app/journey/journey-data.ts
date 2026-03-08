@@ -118,6 +118,9 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Meer zichtbaarheid', 'Heldere sturing', 'Bewuste presence'],
+    avatarImageUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDQWcPdejW9UVA4y3yRzuy8a5IuDYCwowJY0P9iAVrf6skug14ht2AR1cKKTaDXBTYBYZf7ril7sD64oElNySqcVknwLatqnCl0V8i2Go4BfzIrpTnRxHpWOVy9VNjm-RRJfI5iN9nFtwVIgrKI2zSY3Z5r6sSf_2_uJWKYh69iiIuxAvEMZFXev6xBJiVrAFHYicI8WtWCuQLw9N0tHqHvgilVJFSuenEeteTWqETxl2FTHVT5Jik1rf_aEmgqg3_tJW1epomyTBue',
+    classLabel: 'Stage Captain',
     narrative: [
       'In deze fase werd duidelijk dat veel goede intenties off-stage blijven hangen.',
       'Het team profiteert pas echt wanneer richting, verwachtingen en voorbeeldgedrag zichtbaar worden.',
@@ -160,6 +163,9 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Systemisch waarnemen', 'Rust in observatie', 'Sterkere interventies'],
+    avatarImageUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDQWcPdejW9UVA4y3yRzuy8a5IuDYCwowJY0P9iAVrf6skug14ht2AR1cKKTaDXBTYBYZf7ril7sD64oElNySqcVknwLatqnCl0V8i2Go4BfzIrpTnRxHpWOVy9VNjm-RRJfI5iN9nFtwVIgrKI2zSY3Z5r6sSf_2_uJWKYh69iiIuxAvEMZFXev6xBJiVrAFHYicI8WtWCuQLw9N0tHqHvgilVJFSuenEeteTWqETxl2FTHVT5Jik1rf_aEmgqg3_tJW1epomyTBue',
+    classLabel: 'Field Observer',
     narrative: [
       'Achter de stoel staan gaf taal aan een belangrijk leiderschapsmechanisme: eerst kijken, dan kiezen.',
       'Daardoor verschuift de aandacht van snelle oplossingen naar onderliggende dynamieken.',
@@ -202,6 +208,9 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Patroonherkenning', 'Meer eigenaarschap', 'Doorbreken van middelmaat'],
+    avatarImageUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDQWcPdejW9UVA4y3yRzuy8a5IuDYCwowJY0P9iAVrf6skug14ht2AR1cKKTaDXBTYBYZf7ril7sD64oElNySqcVknwLatqnCl0V8i2Go4BfzIrpTnRxHpWOVy9VNjm-RRJfI5iN9nFtwVIgrKI2zSY3Z5r6sSf_2_uJWKYh69iiIuxAvEMZFXev6xBJiVrAFHYicI8WtWCuQLw9N0tHqHvgilVJFSuenEeteTWqETxl2FTHVT5Jik1rf_aEmgqg3_tJW1epomyTBue',
+    classLabel: 'Triangle Breaker',
     narrative: [
       'Dit level maakte zichtbaar hoe snel teams in bekende rollen schieten zodra spanning oploopt.',
       'Het risico is dat iedereen iets doet, maar niemand echt verantwoordelijkheid neemt.',
@@ -244,6 +253,9 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Ik leer van fouten', 'Ik mag hulp vragen', 'Ik ben waardevol'],
+    avatarImageUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDQWcPdejW9UVA4y3yRzuy8a5IuDYCwowJY0P9iAVrf6skug14ht2AR1cKKTaDXBTYBYZf7ril7sD64oElNySqcVknwLatqnCl0V8i2Go4BfzIrpTnRxHpWOVy9VNjm-RRJfI5iN9nFtwVIgrKI2zSY3Z5r6sSf_2_uJWKYh69iiIuxAvEMZFXev6xBJiVrAFHYicI8WtWCuQLw9N0tHqHvgilVJFSuenEeteTWqETxl2FTHVT5Jik1rf_aEmgqg3_tJW1epomyTBue',
+    classLabel: 'Mindset Alchemist',
     narrative: [
       'Dit level voelde als een echte systems update.',
       'Een overtuiging is niet zomaar een gedachte, maar vaak een script dat je gedrag automatisch beïnvloedt.',
@@ -286,6 +298,9 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Meer focus', 'Minder ruis', 'Proactief gedrag'],
+    avatarImageUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDQWcPdejW9UVA4y3yRzuy8a5IuDYCwowJY0P9iAVrf6skug14ht2AR1cKKTaDXBTYBYZf7ril7sD64oElNySqcVknwLatqnCl0V8i2Go4BfzIrpTnRxHpWOVy9VNjm-RRJfI5iN9nFtwVIgrKI2zSY3Z5r6sSf_2_uJWKYh69iiIuxAvEMZFXev6xBJiVrAFHYicI8WtWCuQLw9N0tHqHvgilVJFSuenEeteTWqETxl2FTHVT5Jik1rf_aEmgqg3_tJW1epomyTBue',
+    classLabel: 'Influence Ranger',
     narrative: [
       'Dit level bracht veel eerdere lessen samen: waarnemen, kiezen en dan gericht handelen.',
       'Aandachtsmanagement werd ineens heel praktisch door de vraag: waar heb ik nu echt invloed op?',
@@ -328,6 +343,9 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Systemisch waarnemen', 'On-stage leiderschap', 'Cirkel van invloed'],
+    avatarImageUrl:
+      'https://lh3.googleusercontent.com/aida-public/AB6AXuDQWcPdejW9UVA4y3yRzuy8a5IuDYCwowJY0P9iAVrf6skug14ht2AR1cKKTaDXBTYBYZf7ril7sD64oElNySqcVknwLatqnCl0V8i2Go4BfzIrpTnRxHpWOVy9VNjm-RRJfI5iN9nFtwVIgrKI2zSY3Z5r6sSf_2_uJWKYh69iiIuxAvEMZFXev6xBJiVrAFHYicI8WtWCuQLw9N0tHqHvgilVJFSuenEeteTWqETxl2FTHVT5Jik1rf_aEmgqg3_tJW1epomyTBue',
+    classLabel: 'Quest Master',
     narrative: [
       'De training bevestigde veel wat al bekend was, maar maakte scherper waar de echte opgave zit.',
       'Niet harder trekken, maar bewuster leiden past precies bij de rol van Practice Lead.',
