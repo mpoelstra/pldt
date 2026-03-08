@@ -1,1 +1,103 @@
-<app-default-level-page [level]="level" />
+<section class="quest-complete-screen panel overflow-hidden">
+  @if (showCelebration()) {
+    <div class="celebration-overlay" aria-hidden="true">
+      <div class="achievement-toast">
+        <span class="material-symbols-outlined">military_tech</span>
+        <div>
+          <p class="achievement-toast__label">Achievement Unlocked</p>
+          <p class="achievement-toast__title">Quest Complete</p>
+        </div>
+      </div>
+
+      <div class="firework firework--left"></div>
+      <div class="firework firework--right"></div>
+
+      @for (piece of confettiPieces; track piece) {
+        <span class="confetti-piece confetti-piece--{{ piece }}"></span>
+      }
+    </div>
+  }
+
+  <header class="quest-header">
+    <h1>Quest Complete</h1>
+    <div class="ultimate-badge">The Ultimate Level</div>
+  </header>
+
+  <section class="quest-boss panel panel--inner">
+    <div class="quest-boss__meta">
+      <div>
+        <p class="quest-boss__label">Target Defeated</p>
+        <p class="quest-boss__value">Inertia &amp; Old Habits</p>
+      </div>
+    </div>
+
+    <div class="quest-boss__art">
+      <div class="quest-boss__art-frame">
+        <img src="/quest.png" alt="Quest complete eindscherm artwork" />
+      </div>
+    </div>
+
+    <div class="quest-boss__rank">
+      <p class="quest-boss__label">Rank</p>
+      <p class="quest-boss__rank-value">S+</p>
+    </div>
+  </section>
+
+  <section class="quest-insight panel panel--inner">
+    <p class="quest-insight__label">Top inzicht</p>
+    <blockquote>
+      “Het punt is niet dat we niet weten wat we moeten doen, het punt is dat we niet doen wat we
+      weten”
+    </blockquote>
+  </section>
+
+  <section class="quest-summary-grid">
+    <article class="quest-lessons panel panel--inner">
+      <div class="section-kicker">
+        <span class="material-symbols-outlined">terminal</span>
+        <span>Overige lessen</span>
+      </div>
+
+      <ol class="quest-lessons__list">
+        <li>
+          <span class="lesson-index">01.</span>
+          <p>
+            “Omdat ik in mijn werk al stuur op groei, teamontwikkeling en autonomie, sluit deze
+            training goed aan op wat je in de praktijk nodig hebt: niet harder trekken, maar
+            bewuster leiden.”
+          </p>
+        </li>
+        <li>
+          <span class="lesson-index">02.</span>
+          <p>
+            “Mijn volgende stap als leider is niet een totaal ander persoon worden, maar
+            consistenter worden in gedrag: doen wat ik eigenlijk allang weet dat werkt.”
+          </p>
+        </li>
+        <li>
+          <span class="lesson-index">03.</span>
+          <p>
+            “Uiteindelijk is mijn belangrijkste inzicht: leiderschap is een keuze die ik steeds
+            opnieuw maak — in aandacht, gedrag, gesprekken en voorbeeldgedrag.”
+          </p>
+        </li>
+      </ol>
+    </article>
+  </section>
+
+  <footer class="quest-actions">
+    <a class="game-button quest-action quest-action--ghost" [routerLink]="['/', firstLevel.slug]">
+      <span class="material-symbols-outlined">replay</span>
+      Opnieuw spelen
+    </a>
+
+    <button
+      class="game-button game-button--primary quest-action"
+      type="button"
+      (click)="triggerCelebration()"
+    >
+      <span class="material-symbols-outlined">flag</span>
+      Finish
+    </button>
+  </footer>
+</section>

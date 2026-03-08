@@ -6,6 +6,7 @@ import { JOURNEY_LEVELS, JourneyLevel } from '../../journey/journey-data';
 
 @Component({
   selector: 'app-default-level-page',
+  standalone: true,
   imports: [CommonModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './default-level-page.component.html',

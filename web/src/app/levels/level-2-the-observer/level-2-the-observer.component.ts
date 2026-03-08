@@ -5,6 +5,7 @@ import { JOURNEY_LEVELS } from '../../journey/journey-data';
 
 @Component({
   selector: 'app-level-2-the-observer',
+  standalone: true,
   imports: [RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './level-2-the-observer.component.html',

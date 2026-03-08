@@ -1,3 +1,199 @@
 :host {
-  display: block;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.rewrite-graphic-panel,
+.rewrite-stat-card {
+  overflow: hidden;
+}
+
+.rewrite-graphic {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.75rem;
+  background:
+    radial-gradient(circle at center, rgba(13, 242, 13, 0.08), transparent 45%),
+    linear-gradient(180deg, rgba(10, 24, 10, 0.9), rgba(8, 16, 8, 0.92));
+}
+
+.rewrite-column {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.rewrite-column__header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--accent);
+}
+
+.rewrite-column__header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.rewrite-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.rewrite-card--debuff {
+  border-color: rgba(255, 95, 80, 0.25);
+  background: rgba(255, 95, 80, 0.05);
+}
+
+.rewrite-card--upgrade {
+  border-color: color-mix(in srgb, var(--accent) 20%, transparent);
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+.rewrite-card .material-symbols-outlined {
+  font-size: 1.6rem;
+}
+
+.rewrite-card--debuff .material-symbols-outlined {
+  color: #ff6f5d;
+}
+
+.rewrite-card--upgrade .material-symbols-outlined {
+  color: var(--accent);
+}
+
+.rewrite-card__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(240, 245, 240, 0.94);
+}
+
+.rewrite-card__meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(220, 228, 220, 0.65);
+}
+
+.rewrite-center {
+  display: grid;
+  justify-items: center;
+  gap: 0.8rem;
+}
+
+.rewrite-orb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.6rem;
+  height: 5.6rem;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  background: rgba(13, 242, 13, 0.08);
+  color: var(--accent);
+  box-shadow: 0 0 24px rgba(13, 242, 13, 0.16);
+}
+
+.rewrite-orb .material-symbols-outlined {
+  font-size: 2.3rem;
+}
+
+.rewrite-center__label {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.level-insight-copy {
+  font-size: clamp(1.2rem, 1.7vw, 1.65rem);
+  line-height: 1.6;
+}
+
+.level-insight-cta {
+  padding: 0.8rem 1rem;
+}
+
+.rewrite-stats-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.rewrite-stat-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.35rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
+  border-radius: 1.1rem;
+  background: linear-gradient(180deg, rgba(9, 21, 9, 0.9), rgba(7, 16, 7, 0.88));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.rewrite-stat-card::after {
+  content: "";
+  position: absolute;
+  inset: 0.4rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 9%, transparent);
+  border-radius: 0.9rem;
+  pointer-events: none;
+}
+
+.rewrite-stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);
+  border-radius: 0.9rem;
+  background: color-mix(in srgb, var(--accent) 3%, transparent);
+  color: color-mix(in srgb, var(--accent) 78%, white);
+}
+
+.rewrite-stat-icon .material-symbols-outlined {
+  font-size: 1.65rem;
+}
+
+.rewrite-stat-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--accent) 66%, white);
+}
+
+.rewrite-stat-value {
+  margin: 0;
+  font-size: clamp(0.94rem, 1.25vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: rgba(232, 238, 232, 0.9);
+}
+
+@media (min-width: 950px) {
+  .rewrite-graphic {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .rewrite-stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

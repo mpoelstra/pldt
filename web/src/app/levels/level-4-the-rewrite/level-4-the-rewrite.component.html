@@ -1,1 +1,139 @@
-<app-default-level-page [level]="level" />
+<section class="panel hero-panel overflow-hidden p-5 lg:p-6">
+  <div class="space-y-4">
+    <div class="flex flex-wrap items-center gap-3">
+      <span class="status-pill">{{ level.levelLabel }}</span>
+      <span class="status-pill muted">{{ level.region }}</span>
+    </div>
+
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent-soft)] lg:text-sm">
+        {{ level.subtitle }}
+      </p>
+      <h2 class="mt-2 text-3xl font-black uppercase leading-none tracking-[0.02em] text-[var(--accent)] lg:text-5xl">
+        {{ level.title }}
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="panel rewrite-graphic-panel overflow-hidden">
+  <div class="rewrite-graphic">
+    <div class="rewrite-column rewrite-column--debuff">
+      <div class="rewrite-column__header">
+        <span class="material-symbols-outlined">dangerous</span>
+        <h3>Debuffs</h3>
+      </div>
+
+      <div class="rewrite-card rewrite-card--debuff">
+        <span class="material-symbols-outlined">lock</span>
+        <div>
+          <p class="rewrite-card__title">Ik mag geen fouten maken</p>
+          <p class="rewrite-card__meta">Actief script</p>
+        </div>
+      </div>
+
+      <div class="rewrite-card rewrite-card--debuff">
+        <span class="material-symbols-outlined">fitness_center</span>
+        <div>
+          <p class="rewrite-card__title">Ik moet alles alleen doen</p>
+          <p class="rewrite-card__meta">Te veel druk</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rewrite-center">
+      <div class="rewrite-orb">
+        <span class="material-symbols-outlined">autorenew</span>
+      </div>
+      <p class="rewrite-center__label">Transformation Engine</p>
+    </div>
+
+    <div class="rewrite-column rewrite-column--upgrade">
+      <div class="rewrite-column__header">
+        <span class="material-symbols-outlined">bolt</span>
+        <h3>Upgrades</h3>
+      </div>
+
+      <div class="rewrite-card rewrite-card--upgrade">
+        <span class="material-symbols-outlined">psychology</span>
+        <div>
+          <p class="rewrite-card__title">Ik leer van fouten</p>
+          <p class="rewrite-card__meta">Nieuwe overtuiging</p>
+        </div>
+      </div>
+
+      <div class="rewrite-card rewrite-card--upgrade">
+        <span class="material-symbols-outlined">groups</span>
+        <div>
+          <p class="rewrite-card__title">Ik mag hulp vragen</p>
+          <p class="rewrite-card__meta">Meer ruimte en groei</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel p-5 lg:p-6">
+  <div class="mb-5 flex items-center gap-3 text-[var(--accent)]">
+    <span class="material-symbols-outlined text-2xl lg:text-3xl">workspace_premium</span>
+    <h3 class="text-base font-black uppercase tracking-[0.24em]">Level Insight</h3>
+  </div>
+
+  <div class="level-insight-copy space-y-5 text-white/90">
+    <p>
+      <span class="mr-3 inline-block font-black text-[var(--accent)]">&gt;</span>
+      De training heeft mij geleerd dat
+      <span class="brain-highlight font-black">overtuigingen sterk sturen</span>
+      hoe ik kijk, reageer en leiding geef.
+    </p>
+
+    <p>
+      Als leider helpt het mij om belemmerende overtuigingen eerder te herkennen en bewust te
+      vervangen door overtuigingen die meer ruimte, eigenaarschap en groei mogelijk maken.
+    </p>
+  </div>
+
+  <div class="mt-6 flex items-center justify-end gap-4 lg:mt-8">
+    <div class="hidden text-xs font-black uppercase tracking-[0.22em] text-[var(--accent-soft)] md:flex">
+      <span class="border border-[var(--accent)]/40 px-2 py-1">Space</span>
+      <span class="ml-3 self-center">to continue</span>
+    </div>
+
+    <a class="game-button game-button--primary level-insight-cta" [routerLink]="['/', nextLevel.slug]">
+      Start {{ nextLevel.levelLabel }}
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<section class="rewrite-stats-grid">
+  <article class="panel rewrite-stat-card">
+    <div class="rewrite-stat-icon">
+      <span class="material-symbols-outlined">visibility</span>
+    </div>
+    <div>
+      <p class="rewrite-stat-label">Debuff Scan</p>
+      <h4 class="rewrite-stat-value">Hidden scripts revealed</h4>
+    </div>
+  </article>
+
+  <article class="panel rewrite-stat-card">
+    <div class="rewrite-stat-icon">
+      <span class="material-symbols-outlined">edit_note</span>
+    </div>
+    <div>
+      <p class="rewrite-stat-label">Skill Rewrite</p>
+      <h4 class="rewrite-stat-value">Equip a better belief</h4>
+    </div>
+  </article>
+
+  <article class="panel rewrite-stat-card">
+    <div class="rewrite-stat-icon">
+      <span class="material-symbols-outlined">trending_up</span>
+    </div>
+    <div>
+      <p class="rewrite-stat-label">Buff Active</p>
+      <h4 class="rewrite-stat-value">More room to lead</h4>
+    </div>
+  </article>
+</section>

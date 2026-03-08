@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@use "tailwindcss";
 
 :root {
   --bg: #081108;
@@ -133,24 +133,19 @@ a {
 .character-frame {
   position: relative;
   overflow: hidden;
-  border: 2px solid var(--accent);
-  background: linear-gradient(180deg, rgba(154, 211, 205, 0.95), rgba(115, 182, 174, 0.95));
-  box-shadow: inset 0 0 0 8px rgba(13, 242, 13, 0.18);
-}
-
-.character-frame::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border: 4px dashed rgba(13, 242, 13, 0.35);
-  pointer-events: none;
+  border: 3px solid color-mix(in srgb, var(--accent) 80%, #173517);
+  background: #b4b7ba;
+  box-shadow:
+    0 0 0 3px rgba(9, 19, 9, 0.85),
+    0 0 0 4px color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .character-sprite {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1.12;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
   image-rendering: pixelated;
   position: relative;
   z-index: 1;
@@ -187,12 +182,11 @@ a {
 }
 
 .character-frame--compact {
-  box-shadow: inset 0 0 0 6px rgba(13, 242, 13, 0.15);
+  box-shadow: 0 0 0 1px rgba(13, 242, 13, 0.08);
 }
 
 .character-frame--compact::before {
   inset: 8px;
-  border-width: 3px;
 }
 
 .character-sprite--compact {

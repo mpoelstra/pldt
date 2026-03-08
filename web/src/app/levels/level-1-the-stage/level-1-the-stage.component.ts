@@ -5,6 +5,7 @@ import { JOURNEY_LEVELS } from '../../journey/journey-data';
 
 @Component({
   selector: 'app-level-1-the-stage',
+  standalone: true,
   imports: [RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './level-1-the-stage.component.html',

@@ -14,6 +14,7 @@ import { FIRST_LEVEL_SLUG, JOURNEY_LEVELS, JourneyLevel } from './journey-data';
 
 @Component({
   selector: 'app-journey-shell',
+  standalone: true,
   imports: [CommonModule, RouterLink, RouterOutlet],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './journey-shell.component.html',
