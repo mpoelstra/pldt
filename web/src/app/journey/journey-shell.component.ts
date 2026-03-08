@@ -77,7 +77,16 @@ export class JourneyShellComponent {
 
       if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
         event.preventDefault();
-        this.goNext();
+        const nextLevel = this.nextLevel();
+
+        if (nextLevel) {
+          this.goNext();
+          return;
+        }
+
+        if (this.currentLevel().slug === 'quest-complete') {
+          this.document.defaultView?.dispatchEvent(new CustomEvent('quest-complete-finish'));
+        }
       }
 
       if (event.key === 'ArrowLeft' || event.key === 'PageUp') {

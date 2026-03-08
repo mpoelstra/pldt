@@ -11,16 +11,108 @@
 .pitfalls-graphic {
   display: grid;
   place-items: center;
-  background: linear-gradient(180deg, rgba(10, 24, 10, 0.9), rgba(8, 16, 8, 0.92));
+  min-height: 26rem;
   padding: 2rem 1.5rem;
+  background:
+    radial-gradient(circle at center, color-mix(in srgb, var(--accent) 12%, transparent), transparent 54%),
+    linear-gradient(180deg, rgba(20, 10, 10, 0.9), rgba(12, 8, 8, 0.94));
 }
 
-.pitfalls-triangle-image {
+.pitfalls-triangle-layout {
+  position: relative;
+  width: min(52rem, 100%);
+  height: 21rem;
+}
+
+.pitfalls-triangle-shape {
+  position: absolute;
+  inset: 0;
+}
+
+.pitfalls-triangle-side {
+  position: absolute;
   display: block;
-  width: min(34rem, 100%);
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 0 28px rgba(13, 242, 13, 0.16));
+  height: 0.3rem;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 38%, transparent), var(--accent), color-mix(in srgb, var(--accent) 38%, transparent));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.pitfalls-triangle-side--left {
+  top: 28%;
+  left: 21%;
+  width: 34%;
+  transform: rotate(-52deg);
+  transform-origin: left center;
+}
+
+.pitfalls-triangle-side--right {
+  top: 28%;
+  right: 21%;
+  width: 34%;
+  transform: rotate(52deg);
+  transform-origin: right center;
+}
+
+.pitfalls-triangle-side--bottom {
+  bottom: 16%;
+  left: 26%;
+  width: 48%;
+}
+
+.pitfalls-role-card {
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+}
+
+.pitfalls-role-card--top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pitfalls-role-card--left {
+  left: 0;
+  bottom: 0;
+}
+
+.pitfalls-role-card--right {
+  right: 0;
+  bottom: 0;
+}
+
+.pitfalls-role-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.5rem;
+  height: 7.5rem;
+  border: 2px solid color-mix(in srgb, var(--accent) 72%, transparent);
+  background:
+    radial-gradient(circle at center, color-mix(in srgb, var(--accent) 14%, transparent), transparent 65%),
+    rgba(9, 12, 9, 0.74);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 0 24px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.pitfalls-role-card__icon .material-symbols-outlined {
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+.pitfalls-role-card__label {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 72%, transparent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .level-insight-copy {
@@ -94,5 +186,29 @@
 @media (min-width: 1100px) {
   .pitfalls-stats-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .pitfalls-graphic {
+    min-height: 22rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .pitfalls-triangle-layout {
+    height: 18rem;
+  }
+
+  .pitfalls-role-card__icon {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .pitfalls-role-card__icon .material-symbols-outlined {
+    font-size: 2.2rem;
+  }
+
+  .pitfalls-role-card__label {
+    font-size: 0.75rem;
   }
 }

@@ -14,6 +14,7 @@ import { JOURNEY_LEVELS } from '../../journey/journey-data';
 export class Level6QuestCompleteComponent {
   private readonly destroyRef = inject(DestroyRef);
   private celebrationTimeout: ReturnType<typeof setTimeout> | null = null;
+  private readonly handleFinishShortcut = (): void => this.triggerCelebration();
 
   readonly level = JOURNEY_LEVELS[6];
   readonly firstLevel = JOURNEY_LEVELS[0];
@@ -21,7 +22,11 @@ export class Level6QuestCompleteComponent {
   readonly confettiPieces = Array.from({ length: 18 }, (_, index) => index);
 
   constructor() {
+    window.addEventListener('quest-complete-finish', this.handleFinishShortcut);
+
     this.destroyRef.onDestroy(() => {
+      window.removeEventListener('quest-complete-finish', this.handleFinishShortcut);
+
       if (this.celebrationTimeout) {
         clearTimeout(this.celebrationTimeout);
       }

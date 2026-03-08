@@ -67,7 +67,7 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Practice Lead mindset', 'Richting geven', 'Ruimte bieden'],
-    avatarImageUrl: '/avatar-practice-lead.png',
+    avatarImageUrl: 'avatar-practice-lead.png',
     classLabel: 'Expert Coach',
     brainPosition: [
       'Ik ben een betrouwbare Practice Lead die zijn vak verstaat.',
@@ -117,7 +117,7 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Meer zichtbaarheid', 'Heldere sturing', 'Bewuste presence'],
-    avatarImageUrl: '/avatar-practice-lead.png',
+    avatarImageUrl: 'avatar-practice-lead.png',
     classLabel: 'Stage Captain',
     narrative: [
       'In deze fase werd duidelijk dat veel goede intenties off-stage blijven hangen.',
@@ -161,7 +161,7 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Systemisch waarnemen', 'Rust in observatie', 'Sterkere interventies'],
-    avatarImageUrl: '/avatar-practice-lead.png',
+    avatarImageUrl: 'avatar-practice-lead.png',
     classLabel: 'Field Observer',
     narrative: [
       'Achter de stoel staan gaf taal aan een belangrijk leiderschapsmechanisme: eerst kijken, dan kiezen.',
@@ -205,7 +205,7 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Patroonherkenning', 'Meer eigenaarschap', 'Doorbreken van middelmaat'],
-    avatarImageUrl: '/avatar-practice-lead.png',
+    avatarImageUrl: 'avatar-practice-lead.png',
     classLabel: 'Triangle Breaker',
     narrative: [
       'Dit level maakte zichtbaar hoe snel teams in bekende rollen schieten zodra spanning oploopt.',
@@ -249,7 +249,7 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Ik leer van fouten', 'Ik mag hulp vragen', 'Ik ben waardevol'],
-    avatarImageUrl: '/avatar-practice-lead.png',
+    avatarImageUrl: 'avatar-practice-lead.png',
     classLabel: 'Mindset Alchemist',
     narrative: [
       'Dit level voelde als een echte systems update.',
@@ -293,7 +293,7 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Meer focus', 'Minder ruis', 'Proactief gedrag'],
-    avatarImageUrl: '/avatar-practice-lead.png',
+    avatarImageUrl: 'avatar-practice-lead.png',
     classLabel: 'Influence Ranger',
     narrative: [
       'Dit level bracht veel eerdere lessen samen: waarnemen, kiezen en dan gericht handelen.',
@@ -337,7 +337,7 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
       },
     ],
     loot: ['Systemisch waarnemen', 'On-stage leiderschap', 'Cirkel van invloed'],
-    avatarImageUrl: '/avatar-practice-lead.png',
+    avatarImageUrl: 'avatar-practice-lead.png',
     classLabel: 'Quest Master',
     narrative: [
       'De training bevestigde veel wat al bekend was, maar maakte scherper waar de echte opgave zit.',
