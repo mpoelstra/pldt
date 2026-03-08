@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#102210",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .pixel-border {
+            box-shadow: 0 0 0 2px #102210, 0 0 0 4px #0df20d;
+        }
+        .scanline {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-primary/30 px-6 py-4 bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">videogame_asset</span>
+</div>
+<h2 class="text-primary text-xl font-bold tracking-tighter uppercase">Level: De Cirkel van Invloed</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-4">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 border border-primary/40 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/10 border border-primary/40 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<div class="flex items-center gap-3 bg-primary/5 px-3 py-1.5 rounded-full border border-primary/20">
+<div class="size-8 rounded-full border-2 border-primary overflow-hidden">
+<img alt="Avatar" data-alt="Pixel art player avatar with green helmet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoGwjLvCYE5K39Z7zR9IyHQ0Ci_xS8ICEAcWtEcoWxpRox3GLLTfxZElk9IXuJR_fgPvxrQJGlYzMr7LHOsUbZ-VjK08KHhSIdDISzGOt_fegBJuwfxC_Yq7sU-9bgUEJ04mHYW2Ns12m_u2gi0UyJxrrUxgoitGLN1CBYf8ckJl8SbYbl1E_QKSd5ZicZ7HJ51_0fXjsdzQ90wG5EWlGb3b5coFWUtGecWsacSFgV4zsMGRI5kJmVT27faPM3Qz7LjsMsuFqGTY5k"/>
+</div>
+<span class="text-sm font-bold text-primary">PLAYER_01</span>
+</div>
+</div>
+</header>
+<div class="flex flex-1 flex-col lg:flex-row">
+<!-- Sidebar: Player Status -->
+<aside class="w-full lg:w-64 border-r border-primary/20 bg-background-dark/40 p-6 space-y-8">
+<div>
+<h3 class="text-primary text-xs font-black uppercase tracking-widest mb-4">Player Status</h3>
+<div class="space-y-4">
+<div class="bg-primary/10 p-3 border-l-4 border-primary rounded">
+<p class="text-[10px] text-primary/60 uppercase font-bold">Modus</p>
+<p class="text-primary font-bold">PROACTIEF</p>
+</div>
+<div class="bg-slate-800/50 p-3 border-l-4 border-slate-600 rounded">
+<p class="text-[10px] text-slate-400 uppercase font-bold">Energie</p>
+<div class="w-full bg-slate-700 h-2 mt-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-4/5 shadow-[0_0_8px_#0df20d]"></div>
+</div>
+</div>
+</div>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded bg-primary text-background-dark font-bold text-sm" href="#">
+<span class="material-symbols-outlined text-lg">psychology</span>
+                        MINDSET
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded hover:bg-primary/10 text-slate-300 font-medium text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">inventory_2</span>
+                        INVENTORY
+                    </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded hover:bg-primary/10 text-slate-300 font-medium text-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">map</span>
+                        STRATEGIE
+                    </a>
+</nav>
+<div class="pt-10">
+<div class="border-2 border-dashed border-primary/20 p-4 rounded-xl text-center">
+<span class="material-symbols-outlined text-primary/40 text-4xl mb-2">qr_code_2</span>
+<p class="text-[10px] text-primary/40 font-mono tracking-tighter">REF: {{DATA:IMAGE:IMAGE_4}}</p>
+</div>
+</div>
+</aside>
+<!-- Main Content: The Game Screen -->
+<main class="flex-1 p-6 lg:p-10 relative overflow-hidden flex flex-col items-center">
+<!-- Visual Container -->
+<div class="w-full max-w-4xl flex flex-col items-center">
+<!-- Title Section -->
+<div class="text-center mb-12">
+<h1 class="text-4xl md:text-5xl font-black text-white tracking-tighter mb-4 uppercase italic">
+                            Cirkel van <span class="text-primary">Invloed</span>
+</h1>
+<p class="text-slate-400 max-w-lg mx-auto text-sm leading-relaxed">
+                            Proactieve mensen leven vanuit hun <span class="text-primary font-bold">Cirkel van Invloed</span>. 
+                            Reactieve mensen klagen over de <span class="text-slate-200 font-bold underline decoration-red-500">Cirkel van Betrokkenheid</span>.
+                        </p>
+</div>
+<!-- The Circles Visualization -->
+<div class="relative w-full aspect-square max-w-[500px] flex items-center justify-center">
+<!-- Outer Circle: Betrokkenheid -->
+<div class="absolute inset-0 rounded-full border-4 border-slate-700 bg-slate-800/20 flex items-start justify-center pt-8 overflow-hidden">
+<span class="text-slate-500 font-black text-xs uppercase tracking-widest opacity-50 select-none">Cirkel van Betrokkenheid</span>
+<!-- Floating Icons for Outer Circle -->
+<div class="absolute top-20 left-10 flex flex-col items-center opacity-40 group hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl text-slate-300 mb-1">cloudy_snowing</span>
+<span class="text-[10px] font-bold text-slate-300">HET WEER</span>
+</div>
+<div class="absolute top-24 right-12 flex flex-col items-center opacity-40 group hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl text-slate-300 mb-1">public</span>
+<span class="text-[10px] font-bold text-slate-300">HET NIEUWS</span>
+</div>
+<div class="absolute bottom-24 left-16 flex flex-col items-center opacity-40 group hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl text-slate-300 mb-1">forum</span>
+<span class="text-[10px] font-bold text-slate-300">MENING ANDEREN</span>
+</div>
+</div>
+<!-- Inner Circle: Invloed (The Core) -->
+<div class="relative w-3/5 aspect-square rounded-full border-4 border-primary bg-primary/10 shadow-[0_0_50px_rgba(13,242,13,0.2)] flex flex-col items-center justify-center p-8 z-10">
+<span class="text-primary font-black text-xs uppercase tracking-widest mb-6 text-center">Cirkel van Invloed</span>
+<div class="grid grid-cols-2 gap-6">
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-lg bg-primary/20 border border-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary">ads_click</span>
+</div>
+<span class="text-[10px] font-bold text-white uppercase">Keuzes</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-lg bg-primary/20 border border-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary">directions_run</span>
+</div>
+<span class="text-[10px] font-bold text-white uppercase">Gedrag</span>
+</div>
+<div class="flex flex-col items-center text-center col-span-2">
+<div class="w-12 h-12 rounded-lg bg-primary/20 border border-primary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<span class="text-[10px] font-bold text-white uppercase">Instelling</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Commandos / Power-ups (The 3 A's) -->
+<div class="mt-16 w-full max-w-3xl">
+<h3 class="text-center text-primary text-sm font-black tracking-[0.3em] uppercase mb-8">De 3 A's (Game Commandos)</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Action 1 -->
+<div class="bg-primary/5 border-2 border-primary/20 p-5 rounded-xl hover:border-primary transition-all group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-7xl text-primary">rocket_launch</span>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<div class="bg-primary text-background-dark font-black px-2 py-0.5 text-xs rounded">A1</div>
+<h4 class="text-white font-bold tracking-tight">ACTIE</h4>
+</div>
+<p class="text-slate-400 text-xs leading-normal">Focus je energie op de variabelen die jij direct kunt veranderen.</p>
+</div>
+<!-- Action 2 -->
+<div class="bg-primary/5 border-2 border-primary/20 p-5 rounded-xl hover:border-primary transition-all group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-7xl text-primary">self_improvement</span>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<div class="bg-primary text-background-dark font-black px-2 py-0.5 text-xs rounded">A2</div>
+<h4 class="text-white font-bold tracking-tight">ACCEPTATIE</h4>
+</div>
+<p class="text-slate-400 text-xs leading-normal">Stop met vechten tegen zaken buiten jouw macht. Laat de spanning los.</p>
+</div>
+<!-- Action 3 -->
+<div class="bg-primary/5 border-2 border-primary/20 p-5 rounded-xl hover:border-primary transition-all group cursor-pointer relative overflow-hidden">
+<div class="absolute -right-4 -top-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-7xl text-primary">logout</span>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<div class="bg-primary text-background-dark font-black px-2 py-0.5 text-xs rounded">A3</div>
+<h4 class="text-white font-bold tracking-tight">AFSCHEID</h4>
+</div>
+<p class="text-slate-400 text-xs leading-normal">Neem fysiek of mentaal afstand van toxische situaties of patronen.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Nav -->
+<div class="mt-16 mb-8 flex justify-between w-full max-w-4xl px-4">
+<button class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span class="font-bold text-sm tracking-widest uppercase">Vorige</span>
+</button>
+<button class="flex items-center gap-2 text-primary hover:text-white transition-colors group border-b-2 border-primary pb-1">
+<span class="font-bold text-sm tracking-widest uppercase">Volgende</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</main>
+</div>
+<!-- Scanline CRT Effect Overlay -->
+<div class="fixed inset-0 scanline z-[100] opacity-10 pointer-events-none"></div>
+</div>
+</body></html>

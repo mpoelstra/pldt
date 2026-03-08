@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#102210",
+                        "debuff": "#ff3131",
+                        "accent-muted": "#224922",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .pixel-border {
+            box-shadow: 
+                0 -4px 0 0 #224922,
+                0 4px 0 0 #224922,
+                -4px 0 0 0 #224922,
+                4px 0 0 0 #224922;
+        }
+        .pixel-border-primary {
+            box-shadow: 
+                0 -2px 0 0 #0df20d,
+                0 2px 0 0 #0df20d,
+                -2px 0 0 0 #0df20d,
+                2px 0 0 0 #0df20d;
+        }
+        .retro-glow-green {
+            text-shadow: 0 0 8px rgba(13, 242, 13, 0.6);
+        }
+        .retro-glow-red {
+            text-shadow: 0 0 8px rgba(255, 49, 49, 0.6);
+        }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #102210;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex flex-col h-full min-h-screen">
+<!-- Header -->
+<header class="flex items-center justify-between border-b border-accent-muted px-6 py-4 bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<span class="material-symbols-outlined text-3xl">videogame_asset</span>
+</div>
+<h2 class="text-xl font-bold tracking-tighter uppercase retro-glow-green">Leadership Journey</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden sm:block">
+<p class="text-xs text-primary/60 uppercase font-bold tracking-widest">Huidige Missie</p>
+<p class="text-sm font-bold">DE MINDSET QUEST</p>
+</div>
+<button class="flex items-center justify-center rounded bg-accent-muted h-10 w-10 border border-primary/20 hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar / Player Status -->
+<aside class="w-64 border-r border-accent-muted p-6 hidden lg:flex flex-col gap-8 bg-background-dark/50">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded bg-gradient-to-br from-primary to-emerald-900 border-2 border-primary p-0.5" data-alt="8-bit avatar silhouette">
+<div class="w-full h-full bg-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">person</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h1 class="text-primary font-bold leading-tight uppercase text-sm">Player One</h1>
+<p class="text-slate-400 text-xs font-bold">LVL 12 EXPLORER</p>
+</div>
+</div>
+<div class="w-full bg-accent-muted h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-3/4 shadow-[0_0_8px_#0df20d]"></div>
+</div>
+<p class="text-[10px] text-primary/60 font-bold uppercase tracking-tighter">XP: 1250 / 2000 TO NEXT LEVEL</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:bg-primary/10 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:scale-110">dashboard</span>
+<span class="text-xs font-bold uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-background-dark font-bold shadow-[0_0_15px_rgba(13,242,13,0.3)]" href="#">
+<span class="material-symbols-outlined text-xl">military_tech</span>
+<span class="text-xs uppercase tracking-widest">Levels</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:bg-primary/10 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:scale-110">swords</span>
+<span class="text-xs font-bold uppercase tracking-widest">Quests</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:bg-primary/10 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-xl group-hover:scale-110">settings</span>
+<span class="text-xs font-bold uppercase tracking-widest">Opties</span>
+</a>
+</nav>
+<div class="mt-auto border-2 border-dashed border-accent-muted p-4 rounded-lg">
+<p class="text-[10px] text-primary/40 font-bold uppercase mb-2">Inventory Items</p>
+<div class="grid grid-cols-3 gap-2">
+<div class="aspect-square bg-accent-muted rounded flex items-center justify-center border border-primary/20"><span class="material-symbols-outlined text-primary text-sm">auto_fix</span></div>
+<div class="aspect-square bg-accent-muted rounded flex items-center justify-center border border-primary/20"><span class="material-symbols-outlined text-primary text-sm">shield</span></div>
+<div class="aspect-square bg-accent-muted rounded border border-accent-muted/20"></div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-6 lg:p-10 space-y-10">
+<!-- Screen Title -->
+<div class="space-y-2 border-l-4 border-primary pl-4">
+<h2 class="text-4xl font-black tracking-tight text-slate-100 uppercase italic">LEVEL: <span class="text-primary retro-glow-green">OVERTUIGINGEN</span></h2>
+<p class="text-slate-400 font-medium tracking-wide">Update je karakter door belemmerende overtuigingen te transformeren naar skills.</p>
+</div>
+<!-- Beliefs Comparison Grid -->
+<div class="grid lg:grid-cols-2 gap-8">
+<!-- Debuffs Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-debuff">dangerous</span>
+<h3 class="text-lg font-bold text-debuff uppercase tracking-widest retro-glow-red italic">Belemmerende Overtuigingen</h3>
+</div>
+<div class="space-y-3">
+<div class="p-4 bg-background-dark border-2 border-debuff/30 rounded-lg flex items-center gap-4 group hover:bg-debuff/5 transition-all">
+<span class="material-symbols-outlined text-debuff text-3xl">lock</span>
+<div class="flex-1">
+<p class="text-sm font-bold uppercase tracking-wider text-slate-300">"Ik mag geen fouten maken"</p>
+<p class="text-[10px] text-debuff/60 font-bold uppercase">Status: ACTIEF DEBUFF</p>
+</div>
+</div>
+<div class="p-4 bg-background-dark border-2 border-debuff/30 rounded-lg flex items-center gap-4 group hover:bg-debuff/5 transition-all">
+<span class="material-symbols-outlined text-debuff text-3xl">fitness_center</span>
+<div class="flex-1">
+<p class="text-sm font-bold uppercase tracking-wider text-slate-300">"Ik moet alles alleen doen"</p>
+<p class="text-[10px] text-debuff/60 font-bold uppercase">Belasting: +50KG DRUK</p>
+</div>
+</div>
+<div class="p-4 bg-background-dark border-2 border-debuff/30 rounded-lg flex items-center gap-4 group hover:bg-debuff/5 transition-all">
+<span class="material-symbols-outlined text-debuff text-3xl">heart_broken</span>
+<div class="flex-1">
+<p class="text-sm font-bold uppercase tracking-wider text-slate-300">"Ik ben niet goed genoeg"</p>
+<p class="text-[10px] text-debuff/60 font-bold uppercase">Effect: -10 ZELFVERTROUWEN</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Power-ups Section -->
+<section class="space-y-4">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">bolt</span>
+<h3 class="text-lg font-bold text-primary uppercase tracking-widest retro-glow-green italic">Helpende Overtuigingen</h3>
+</div>
+<div class="space-y-3">
+<div class="p-4 bg-background-dark border-2 border-primary/30 rounded-lg flex items-center gap-4 group hover:bg-primary/5 transition-all border-dashed">
+<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+<div class="flex-1">
+<p class="text-sm font-bold uppercase tracking-wider text-slate-100">"Ik leer van mijn fouten"</p>
+<p class="text-[10px] text-primary/60 font-bold uppercase">Bonus: +20% LEERSNELHEID</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm">stars</span>
+</div>
+<div class="p-4 bg-background-dark border-2 border-primary/30 rounded-lg flex items-center gap-4 group hover:bg-primary/5 transition-all border-dashed">
+<span class="material-symbols-outlined text-primary text-3xl">groups</span>
+<div class="flex-1">
+<p class="text-sm font-bold uppercase tracking-wider text-slate-100">"Ik mag hulp vragen"</p>
+<p class="text-[10px] text-primary/60 font-bold uppercase">Skill: TEAM SYNERGIE</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm">stars</span>
+</div>
+<div class="p-4 bg-background-dark border-2 border-primary/30 rounded-lg flex items-center gap-4 group hover:bg-primary/5 transition-all border-dashed">
+<span class="material-symbols-outlined text-primary text-3xl">favorite</span>
+<div class="flex-1">
+<p class="text-sm font-bold uppercase tracking-wider text-slate-100">"Ik ben waardevol"</p>
+<p class="text-[10px] text-primary/60 font-bold uppercase">Status: MAX CORE STRENGTH</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm">stars</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Transformation Central Section -->
+<section class="bg-accent-muted/20 border-2 border-primary/20 rounded-xl p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]">transform</span>
+</div>
+<div class="relative z-10 text-center mb-10">
+<h3 class="text-2xl font-black text-slate-100 uppercase italic tracking-tighter">DE <span class="text-primary">TRANSFORMATIE</span> ENGINE</h3>
+<p class="text-slate-400 text-sm max-w-xl mx-auto mt-2">Gebruik het transformatieprotocol om een negatieve mind-state om te zetten naar een krachtige upgrade.</p>
+</div>
+<div class="grid md:grid-cols-4 gap-4 relative">
+<!-- Connector Lines (Visual only) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -translate-y-1/2 z-0"></div>
+<div class="relative z-10 flex flex-col items-center gap-4 bg-background-dark p-6 rounded-lg border border-primary/40 group hover:scale-105 transition-transform">
+<div class="size-12 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors shadow-lg">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<div class="text-center">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs">Stap 1: Herken</h4>
+<p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Spot de glitch</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 bg-background-dark p-6 rounded-lg border border-primary/40 group hover:scale-105 transition-transform">
+<div class="size-12 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors shadow-lg">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<div class="text-center">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs">Stap 2: Daag uit</h4>
+<p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Check de logica</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 bg-background-dark p-6 rounded-lg border border-primary/40 group hover:scale-105 transition-transform">
+<div class="size-12 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors shadow-lg">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<div class="text-center">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs">Stap 3: Herformuleer</h4>
+<p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Herschrijf de code</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 bg-background-dark p-6 rounded-lg border border-primary/40 group hover:scale-105 transition-transform">
+<div class="size-12 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-colors shadow-lg">
+<span class="material-symbols-outlined">autorenew</span>
+</div>
+<div class="text-center">
+<h4 class="text-primary font-bold uppercase tracking-widest text-xs">Stap 4: Herhaal</h4>
+<p class="text-[10px] text-slate-400 mt-1 uppercase font-bold">Implementeer patch</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Navigation Controls -->
+<div class="flex items-center justify-between pt-10 border-t border-accent-muted">
+<button class="flex items-center gap-2 px-6 py-3 rounded border-2 border-primary/40 text-primary font-black uppercase text-xs tracking-widest hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+                        VORIGE
+                    </button>
+<div class="flex gap-2">
+<div class="size-2 bg-primary"></div>
+<div class="size-2 bg-primary"></div>
+<div class="size-2 bg-accent-muted"></div>
+<div class="size-2 bg-accent-muted"></div>
+</div>
+<button class="flex items-center gap-2 px-8 py-3 rounded bg-primary text-background-dark font-black uppercase text-xs tracking-widest shadow-[4px_4px_0px_0px_#224922] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                        VOLGENDE
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+</div>
+</div>
+</body></html>

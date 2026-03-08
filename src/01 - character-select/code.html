@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="nl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>De Leiderschapsreis: Game Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#102210",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .pixel-border {
+            box-shadow: 
+                0 -4px 0 0 #0df20d,
+                0 4px 0 0 #0df20d,
+                -4px 0 0 0 #0df20d,
+                4px 0 0 0 #0df20d;
+        }
+        .pixel-bg {
+            background-image: linear-gradient(45deg, #162d16 25%, transparent 25%), 
+                              linear-gradient(-45deg, #162d16 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #162d16 75%), 
+                              linear-gradient(-45deg, transparent 75%, #162d16 75%);
+            background-size: 4px 4px;
+            background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between border-b-4 border-primary/30 bg-background-dark px-6 md:px-10 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<span class="material-symbols-outlined text-3xl">videogame_asset</span>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-tight uppercase">De Leiderschapsreis</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="hover:text-primary transition-colors text-sm font-bold uppercase tracking-widest" href="#">Level Select</a>
+<a class="hover:text-primary transition-colors text-sm font-bold uppercase tracking-widest" href="#">Achievements</a>
+<a class="hover:text-primary transition-colors text-sm font-bold uppercase tracking-widest" href="#">Inventory</a>
+</nav>
+<button class="flex cursor-pointer items-center justify-center rounded bg-primary/20 text-primary border border-primary/40 hover:bg-primary hover:text-background-dark transition-all px-4 py-2">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</header>
+<main class="flex-1 flex flex-col md:flex-row p-4 md:p-8 gap-6 max-w-7xl mx-auto w-full">
+<!-- Left Sidebar: Character Profile -->
+<aside class="w-full md:w-80 flex flex-col gap-6">
+<div class="pixel-border bg-background-dark p-6 flex flex-col items-center gap-4">
+<div class="relative">
+<div class="size-48 bg-primary/10 border-4 border-dashed border-primary/30 flex items-center justify-center overflow-hidden">
+<img alt="Retro 8-bit character sprite of a practice lead" class="w-full h-full object-contain pixelated" data-alt="Retro 8-bit character sprite of a practice lead" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQWcPdejW9UVA4y3yRzuy8a5IuDYCwowJY0P9iAVrf6skug14ht2AR1cKKTaDXBTYBYZf7ril7sD64oElNySqcVknwLatqnCl0V8i2Go4BfzIrpTnRxHpWOVy9VNjm-RRJfI5iN9nFtwVIgrKI2zSY3Z5r6sSf_2_uJWKYh69iiIuxAvEMZFXev6xBJiVrAFHYicI8WtWCuQLw9N0tHqHvgilVJFSuenEeteTWqETxl2FTHVT5Jik1rf_aEmgqg3_tJW1epomyTBue"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-background-dark font-bold px-2 py-1 text-xs uppercase">Level 0</div>
+</div>
+<div class="text-center">
+<h3 class="text-2xl font-bold text-primary uppercase">Practice Lead</h3>
+<p class="text-primary/70 text-sm font-medium">Class: Expert Coach</p>
+</div>
+</div>
+<div class="pixel-border bg-background-dark p-4 flex flex-col gap-3">
+<div class="flex justify-between items-center border-b border-primary/20 pb-2">
+<span class="text-xs uppercase font-bold text-primary/60">Stats</span>
+<span class="material-symbols-outlined text-primary text-sm">equalizer</span>
+</div>
+<div class="space-y-4 py-2">
+<div>
+<div class="flex justify-between text-xs font-bold uppercase mb-1">
+<span>Wisdom</span>
+<span>85/100</span>
+</div>
+<div class="w-full bg-primary/10 h-3 border border-primary/30">
+<div class="bg-primary h-full" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-bold uppercase mb-1">
+<span>Leadership</span>
+<span>70/100</span>
+</div>
+<div class="w-full bg-primary/10 h-3 border border-primary/30">
+<div class="bg-primary h-full" style="width: 70%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-bold uppercase mb-1">
+<span>Execution</span>
+<span>90/100</span>
+</div>
+<div class="w-full bg-primary/10 h-3 border border-primary/30">
+<div class="bg-primary h-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Center: Content Area -->
+<section class="flex-1 flex flex-col gap-6">
+<!-- Title Section -->
+<div class="pixel-border bg-primary/10 p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 text-primary/20">
+<span class="material-symbols-outlined text-6xl">terminal</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-bold uppercase tracking-tighter text-primary mb-2">Level 0: Character Intro</h1>
+<p class="text-lg italic text-slate-300 border-l-4 border-primary pl-4 py-1">
+                            "Het punt is niet dat we niet weten wat we moeten doen, het punt is dat we niet doen wat we weten."
+                        </p>
+</div>
+<!-- RPG Style Dialogue Box -->
+<div class="pixel-border bg-background-dark p-8 flex flex-col gap-6 relative grow">
+<div class="flex items-center gap-3 text-primary mb-2">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-bold uppercase tracking-widest text-sm">Breinpositie</span>
+</div>
+<div class="space-y-6 text-lg md:text-xl leading-relaxed text-slate-100 font-light">
+<p>
+<span class="text-primary font-bold inline-block mr-2">&gt;</span> Ik ben een betrouwbare <span class="text-primary font-bold">Practice Lead</span> die zijn vak verstaat. 
+                            </p>
+<p>
+                                Vanuit inhoudelijke expertise geef ik richting, bied ik ruimte en coach ik mijn team. 
+                            </p>
+<p>
+                                Door goed te luisteren en tijdig te sturen, help ik mensen zich te ontwikkelen tot de <span class="bg-primary/20 text-primary px-1">beste versie van zichzelf</span>. 
+                            </p>
+<p>
+                                Zo behalen we samen het beste resultaat – als mens én als team.
+                            </p>
+</div>
+<div class="mt-auto pt-8 flex justify-end items-center gap-6">
+<div class="hidden md:flex items-center gap-2 text-primary/50 text-xs font-bold uppercase">
+<span class="border border-primary/50 px-1">SPACE</span> to continue
+                            </div>
+<button class="group flex items-center gap-4 bg-primary text-background-dark font-black uppercase px-8 py-4 text-xl hover:scale-105 transition-transform">
+                                Start Level 1
+                                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward_ios</span>
+</button>
+</div>
+<!-- Pixel detail corner -->
+<div class="absolute bottom-2 right-2 size-4 border-r-4 border-b-4 border-primary"></div>
+</div>
+<!-- Bottom Quest Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-primary/5 border border-primary/20 p-4 rounded flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+<div>
+<h4 class="text-xs font-bold uppercase text-primary/60 tracking-widest">Main Quest</h4>
+<p class="text-sm font-bold">The Knowledge Gap</p>
+</div>
+</div>
+<div class="bg-primary/5 border border-primary/20 p-4 rounded flex items-center gap-4 opacity-50">
+<span class="material-symbols-outlined text-primary">lock</span>
+<div>
+<h4 class="text-xs font-bold uppercase text-primary/60 tracking-widest">Side Mission</h4>
+<p class="text-sm font-bold italic">Locked</p>
+</div>
+</div>
+<div class="bg-primary/5 border border-primary/20 p-4 rounded flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">map</span>
+<div>
+<h4 class="text-xs font-bold uppercase text-primary/60 tracking-widest">Region</h4>
+<p class="text-sm font-bold">Inhoudelijk Domein</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Area -->
+<footer class="p-6 text-center text-primary/40 text-xs font-bold uppercase tracking-[0.2em]">
+                © 2024 Leadership Journey - Game Edition // System Ready_
+            </footer>
+</div>
+</div>
+</body></html>

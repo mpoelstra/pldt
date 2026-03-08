@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#102210",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<title>Leadership Journey - Level 2</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Nav Bar -->
+<header class="flex items-center justify-between border-b border-primary/20 px-6 py-4 lg:px-20 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">grid_view</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight uppercase">Leadership Journey</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30">
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Rank: Lead Explorer</span>
+</div>
+<button class="flex items-center justify-center rounded-full size-10 bg-primary/20 hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-primary">person</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 flex-col lg:flex-row">
+<!-- Sidebar Navigation -->
+<aside class="w-full lg:w-72 border-r border-primary/20 p-6 flex flex-col justify-between bg-background-light dark:bg-background-dark">
+<div class="space-y-8">
+<div>
+<h3 class="text-xs font-bold text-primary/60 uppercase tracking-widest mb-4">Player Status</h3>
+<div class="space-y-3">
+<div class="p-3 rounded-lg bg-primary/5 border border-primary/10">
+<div class="flex justify-between items-end mb-1">
+<span class="text-[10px] font-bold uppercase opacity-70">Experience (XP)</span>
+<span class="text-primary font-bold">1250</span>
+</div>
+<div class="w-full bg-primary/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-3/4 shadow-[0_0_10px_#0df20d]"></div>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-primary/5 border border-primary/10">
+<div class="flex justify-between items-end mb-1">
+<span class="text-[10px] font-bold uppercase opacity-70">Focus Intensity</span>
+<span class="text-primary font-bold">85%</span>
+</div>
+<div class="w-full bg-primary/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%] shadow-[0_0_10px_#0df20d]"></div>
+</div>
+</div>
+</div>
+</div>
+<nav class="space-y-1">
+<h3 class="text-xs font-bold text-primary/60 uppercase tracking-widest mb-4">Map Progression</h3>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="text-sm font-medium">Level 1: The Actor</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded bg-primary/20 text-primary border-l-2 border-primary" href="#">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="text-sm font-bold">Level 2: The Observer</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="text-sm font-medium opacity-50">Level 3: The Architect</span>
+</a>
+</nav>
+</div>
+<div class="mt-8 pt-8 border-t border-primary/10">
+<button class="w-full py-3 px-4 flex items-center justify-between rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition-all border border-slate-700">
+<span class="text-xs font-bold uppercase tracking-tighter">Settings</span>
+<span class="material-symbols-outlined text-sm">settings</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 lg:p-12 max-w-5xl mx-auto w-full">
+<!-- Breadcrumb / Level Header -->
+<div class="mb-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded bg-primary text-background-dark text-[10px] font-black uppercase tracking-widest">Active Level</span>
+<div class="h-px flex-1 bg-primary/20"></div>
+</div>
+<h1 class="text-5xl lg:text-7xl font-black text-slate-900 dark:text-white uppercase tracking-tighter leading-none mb-4">
+                    LEVEL 2: <span class="text-primary">THE OBSERVER</span>
+</h1>
+<p class="text-xl text-primary/80 font-medium italic">Achter je stoel staan &amp; waarnemen</p>
+</div>
+<!-- Visual Representation Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+<div class="lg:col-span-7">
+<div class="relative group aspect-video rounded-xl overflow-hidden border-2 border-primary/30 bg-slate-900 shadow-[0_0_30px_rgba(13,242,13,0.1)]">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent opacity-60 z-10"></div>
+<img alt="Pixel art style retro workstation" class="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="Retro pixel art of a glowing computer desk in dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpj7-AEmfxOAkESTBx-y58MM-uWuy-8elTMWiCMo5OjNEYVLlIpinjLEtu_AYgGzjnAT-8TNJjQGGIAjb9s815xuGSaWQl7sH1sML4VhIc_ZaQDu8ZpTUfR886J_VErdYsDUHd8C1fKskD0x3TsxpsjcMgMZqwisl8uh5a6upIVXn_AcX7VZnEU74Xb5x-phSK8qtmVXD3cK5wk5sFj9-Z2nDL7BrNnjLw0PgKx4JWY80oqpsIklrdjU34aa5YhyZfnjC2zoUwqcek"/>
+<!-- Retro Overlay Elements -->
+<div class="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
+<div class="border-2 border-primary p-6 bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-primary text-5xl">person_pin_circle</span>
+<div class="h-12 w-[2px] bg-primary/30"></div>
+<span class="material-symbols-outlined text-slate-500 text-3xl">groups</span>
+</div>
+<div class="text-[10px] font-mono text-primary text-center tracking-[0.2em] uppercase">
+                                    Position: Elevated Observation
+                                </div>
+</div>
+</div>
+<!-- UI Decoration -->
+<div class="absolute top-4 left-4 z-20 flex gap-1">
+<div class="size-2 rounded-full bg-primary animate-pulse"></div>
+<div class="size-2 rounded-full bg-primary/40"></div>
+<div class="size-2 rounded-full bg-primary/40"></div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 flex flex-col justify-center">
+<div class="space-y-6">
+<div class="inline-block px-3 py-1 rounded bg-primary/10 border border-primary/20">
+<h3 class="text-sm font-bold text-primary uppercase tracking-widest">Core Mission</h3>
+</div>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
+                            Systemisch Leiderschap &amp; Emotionele Intelligentie
+                        </h2>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                            Het doel is om niet direct in de actie te duiken, maar als een <span class="text-primary font-semibold">'observer'</span> de dynamiek in een team of situatie te aanschouwen zonder direct te oordelen.
+                        </p>
+<div class="pt-4 flex flex-col sm:flex-row gap-4">
+<button class="px-8 py-4 bg-primary hover:bg-primary/90 text-background-dark font-black uppercase tracking-widest rounded-lg shadow-[0_0_20px_rgba(13,242,13,0.4)] transition-all flex items-center justify-center gap-3 group">
+<span class="material-symbols-outlined font-bold">radar</span>
+                                OBSERVE MODE ACTIVE
+                            </button>
+<button class="px-6 py-4 bg-primary/10 border border-primary/30 text-primary font-bold uppercase tracking-widest rounded-lg hover:bg-primary/20 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">menu_book</span>
+                                Briefing
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Stats / Navigation -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 rounded-xl border border-primary/10 bg-primary/5 flex items-center gap-4">
+<div class="size-12 rounded-full bg-background-dark flex items-center justify-center text-primary border border-primary/30">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-primary/60 uppercase">Complexity</p>
+<p class="text-lg font-bold">Medium Priority</p>
+</div>
+</div>
+<div class="p-6 rounded-xl border border-primary/10 bg-primary/5 flex items-center gap-4">
+<div class="size-12 rounded-full bg-background-dark flex items-center justify-center text-primary border border-primary/30">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-primary/60 uppercase">Duration</p>
+<p class="text-lg font-bold">Infinite Loop</p>
+</div>
+</div>
+<div class="p-6 rounded-xl border border-primary/10 bg-primary/5 flex items-center gap-4">
+<div class="size-12 rounded-full bg-background-dark flex items-center justify-center text-primary border border-primary/30">
+<span class="material-symbols-outlined">emoji_events</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-primary/60 uppercase">Reward</p>
+<p class="text-lg font-bold">+500 Insights</p>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="mt-12 flex justify-between items-center border-t border-primary/10 pt-8">
+<a class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+<span class="text-sm font-bold uppercase tracking-widest">Level 1</span>
+</a>
+<div class="flex gap-2">
+<div class="size-2 rounded-full bg-primary/20"></div>
+<div class="size-2 rounded-full bg-primary shadow-[0_0_5px_#0df20d]"></div>
+<div class="size-2 rounded-full bg-primary/20"></div>
+</div>
+<a class="flex items-center gap-2 text-slate-500 hover:text-primary transition-colors group" href="#">
+<span class="text-sm font-bold uppercase tracking-widest">Level 3</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</main>
+</div>
+</div>
+</body></html>
