@@ -3,7 +3,8 @@
 }
 
 .shell-header__inner,
-.shell-main {
+.shell-main,
+.shell-footer__inner {
   width: min(100%, 96rem);
 }
 
@@ -34,7 +35,7 @@
 
 .app-shell.presentation-mode {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
   min-height: 100dvh;
   height: 100dvh;
   overflow: hidden;
@@ -51,6 +52,11 @@
 
 .app-shell.presentation-mode .shell-header__inner {
   width: min(100%, 92rem);
+  max-width: none;
+}
+
+.app-shell.presentation-mode .shell-footer__inner {
+  width: 100%;
   max-width: none;
 }
 

@@ -142,29 +142,33 @@
     <section class="shell-content space-y-6">
       <router-outlet />
     </section>
-
-    <section class="panel jump-bar jump-bar--bottom p-4 lg:col-span-2">
-      <div class="mb-2 flex items-center justify-between gap-3">
-        <p class="text-[10px] font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
-          Level Select
-        </p>
-        <span class="material-symbols-outlined jump-bar__icon text-[var(--accent)]">map</span>
-      </div>
-
-      <nav class="jump-bar__nav" aria-label="Level selection">
-        @for (level of levels; track level.slug) {
-          <a
-            class="level-link jump-bar__link"
-            [class.active]="level.slug === currentLevel().slug"
-            [routerLink]="['/', level.slug]"
-          >
-            <span class="text-[10px] font-black uppercase tracking-[0.2em]">
-              {{ level.levelLabel }}@if (level.arcLabel) { - {{ level.arcLabel }} }
-            </span>
-            <span class="mt-1 block text-base font-semibold leading-tight">{{ level.title }}</span>
-          </a>
-        }
-      </nav>
-    </section>
   </main>
+
+  <footer class="shell-footer border-t border-white/10 bg-[rgba(5,12,5,0.86)] backdrop-blur">
+    <div class="shell-footer__inner mx-auto px-4 py-3 lg:px-6">
+      <section class="panel jump-bar jump-bar--bottom p-4">
+        <div class="mb-2 flex items-center justify-between gap-3">
+          <p class="text-[10px] font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+            Level Select
+          </p>
+          <span class="material-symbols-outlined jump-bar__icon text-[var(--accent)]">map</span>
+        </div>
+
+        <nav class="jump-bar__nav" aria-label="Level selection">
+          @for (level of levels; track level.slug) {
+            <a
+              class="level-link jump-bar__link"
+              [class.active]="level.slug === currentLevel().slug"
+              [routerLink]="['/', level.slug]"
+            >
+              <span class="text-[10px] font-black uppercase tracking-[0.2em]">
+                {{ level.levelLabel }}@if (level.arcLabel) { - {{ level.arcLabel }} }
+              </span>
+              <span class="mt-1 block text-base font-semibold leading-tight">{{ level.title }}</span>
+            </a>
+          }
+        </nav>
+      </section>
+    </div>
+  </footer>
 </div>
