@@ -17,6 +17,8 @@ export interface JourneyLevel {
   readonly id: number;
   readonly slug: string;
   readonly levelLabel: string;
+  readonly arcLabel?: string;
+  readonly oneLiner?: string;
   readonly title: string;
   readonly subtitle: string;
   readonly quote: string;
@@ -40,6 +42,8 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
     id: 0,
     slug: 'character-select',
     levelLabel: 'Level 0',
+    arcLabel: 'Identity',
+    oneLiner: 'Dit is wie ik wil zijn als leider',
     title: 'Character Select',
     subtitle: 'Breinpositie en start van de reis',
     quote: 'Het punt is niet dat we niet weten wat we moeten doen, het punt is dat we niet doen wat we weten.',
@@ -90,6 +94,8 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
     id: 1,
     slug: 'the-stage',
     levelLabel: 'Level 1',
+    arcLabel: 'Behavior',
+    oneLiner: 'Zichtbaar gedrag is de echte test',
     title: 'The Stage',
     subtitle: 'Off-stage versus on-stage gedrag',
     quote: 'Leiderschap is zichtbaar gedrag, niet alleen een goede interne analyse.',
@@ -134,6 +140,8 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
     id: 2,
     slug: 'the-observer',
     levelLabel: 'Level 2',
+    arcLabel: 'Observation',
+    oneLiner: 'Eerst kijken, dan kiezen',
     title: 'The Observer',
     subtitle: 'Achter de stoel staan en waarnemen',
     quote: 'Niet meteen oplossen, eerst zien wat er echt gebeurt.',
@@ -178,6 +186,8 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
     id: 3,
     slug: 'the-pitfalls',
     levelLabel: 'Level 3',
+    arcLabel: 'Observation',
+    oneLiner: 'Patronen herkennen voorkomt drama',
     title: 'The Pitfalls',
     subtitle: 'De drama driehoek en middelmaat',
     quote: 'Comfortabele patronen houden groei tegen.',
@@ -222,6 +232,8 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
     id: 4,
     slug: 'overtuigingen',
     levelLabel: 'Level 4',
+    arcLabel: 'Reprogram',
+    oneLiner: 'Overtuigingen sturen gedrag',
     title: 'The Rewrite',
     subtitle: 'Van debuffs naar upgrades',
     quote: 'Helpende en belemmerende overtuigingen bepalen hoe je speelt.',
@@ -266,6 +278,8 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
     id: 5,
     slug: 'cirkel-van-invloed',
     levelLabel: 'Level 5',
+    arcLabel: 'Reprogram',
+    oneLiner: 'Focus op invloed geeft rust',
     title: 'The Influence',
     subtitle: 'Strategische focus op wat je wél kunt doen',
     quote: 'Proactieve mensen leven vanuit hun cirkel van invloed.',
@@ -310,6 +324,7 @@ export const JOURNEY_LEVELS: readonly JourneyLevel[] = [
     id: 6,
     slug: 'quest-complete',
     levelLabel: 'Quest Complete',
+    oneLiner: 'Leiderschap is doen wat je al weet',
     title: 'Quest Complete',
     subtitle: 'Afronding van de ontwikkelreis',
     quote: 'Leiderschap is een keuze die ik steeds opnieuw maak.',

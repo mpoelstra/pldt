@@ -32,6 +32,16 @@ body {
     linear-gradient(180deg, #0a130a 0%, #081108 100%);
 }
 
+html.presentation-mode,
+body.presentation-mode {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body.presentation-mode {
+  overscroll-behavior: none;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
@@ -258,6 +268,156 @@ a {
   height: 100%;
   background: linear-gradient(90deg, #0df20d, color-mix(in srgb, #0df20d 78%, white));
   box-shadow: 0 0 18px var(--accent-shadow);
+}
+
+.presentation-mode .panel {
+  box-shadow:
+    0 0 0 1px rgba(13, 242, 13, 0.06),
+    0 0 18px var(--accent-shadow);
+}
+
+.presentation-mode .hero-panel {
+  padding: 1rem 1.2rem !important;
+}
+
+.presentation-mode .status-pill {
+  padding: 0.32rem 0.58rem;
+  font-size: 0.6rem;
+}
+
+.presentation-mode .character-name {
+  font-size: 1.4rem;
+}
+
+.presentation-mode .character-class-label {
+  font-size: 0.9rem;
+}
+
+.presentation-mode .character-level-tag,
+.presentation-mode .character-level-tag--compact {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.74rem;
+}
+
+.presentation-mode .character-frame--compact {
+  max-width: 13rem;
+  margin-inline: auto;
+}
+
+.presentation-mode .stat-track {
+  height: 1rem;
+}
+
+.presentation-mode .level-insight-copy {
+  font-size: clamp(1rem, 1.35vw, 1.35rem) !important;
+  line-height: 1.45 !important;
+}
+
+.presentation-mode .level-insight-cta,
+.presentation-mode .game-button {
+  min-height: 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.presentation-mode .pitfalls-graphic {
+  min-height: 21rem !important;
+  padding: 1.2rem 1rem !important;
+}
+
+.presentation-mode .pitfalls-triangle-layout {
+  height: 17rem !important;
+}
+
+.presentation-mode .pitfalls-role-card__icon {
+  width: 6rem;
+  height: 6rem;
+}
+
+.presentation-mode .pitfalls-role-card__icon .material-symbols-outlined {
+  font-size: 2.35rem;
+}
+
+.presentation-mode .rewrite-graphic {
+  padding: 1.15rem !important;
+  gap: 0.85rem;
+}
+
+.presentation-mode .rewrite-orb {
+  width: 4.6rem;
+  height: 4.6rem;
+}
+
+.presentation-mode .influence-image {
+  width: min(22rem, 100%) !important;
+}
+
+.presentation-mode .quest-complete-screen {
+  gap: 1rem !important;
+  padding: 1.1rem !important;
+}
+
+.presentation-mode .quest-boss {
+  min-height: 15.5rem !important;
+}
+
+.presentation-mode .quest-boss__art-frame {
+  min-height: 11.5rem !important;
+}
+
+.presentation-mode .quest-boss__art-frame img {
+  width: min(10rem, 100%) !important;
+}
+
+.presentation-mode .quest-insight {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.presentation-mode .quest-insight blockquote {
+  font-size: clamp(1.2rem, 2vw, 1.95rem) !important;
+}
+
+.presentation-mode .quest-lessons__list {
+  gap: 1rem !important;
+}
+
+.presentation-mode .quest-lessons__list p {
+  font-size: 0.94rem !important;
+  line-height: 1.48 !important;
+}
+
+.one-liner-panel {
+  padding: 1.1rem 1.3rem;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, rgba(9, 18, 9, 0.96)), rgba(7, 14, 7, 0.94)),
+    radial-gradient(circle at left center, color-mix(in srgb, var(--accent) 14%, transparent), transparent 42%);
+}
+
+.one-liner-panel__label {
+  margin: 0 0 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+.one-liner-panel__text {
+  margin: 0;
+  font-size: clamp(1.15rem, 1.9vw, 1.9rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: #f2fbf2;
+  text-transform: uppercase;
+}
+
+.presentation-mode .one-liner-panel {
+  padding: 0.9rem 1.1rem;
+}
+
+.presentation-mode .one-liner-panel__text {
+  font-size: clamp(1rem, 1.55vw, 1.45rem);
 }
 
 .level-link {

@@ -4,7 +4,9 @@ import {
   Component,
   DestroyRef,
   computed,
+  effect,
   inject,
+  signal,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Router, RouterLink, RouterOutlet, NavigationEnd } from '@angular/router';
@@ -24,25 +26,44 @@ export class JourneyShellComponent {
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
   private readonly document = inject(DOCUMENT);
+  private readonly storageKey = 'pldt.presentation-mode';
+  private readonly initialPresentationMode = (() => {
+    const url = this.router.url || `/${FIRST_LEVEL_SLUG}`;
+    const queryStart = url.indexOf('?');
 
-  readonly levels = JOURNEY_LEVELS;
-  readonly totalLevels = JOURNEY_LEVELS.length;
+    if (queryStart !== -1) {
+      const params = new URLSearchParams(url.slice(queryStart + 1));
+      if (
+        params.get('presentation') === '1' ||
+        params.get('present') === '1' ||
+        params.get('mode') === 'presentation'
+      ) {
+        return true;
+      }
+    }
 
-  private readonly currentSlug = toSignal(
+    return this.document.defaultView?.localStorage.getItem(this.storageKey) === 'true';
+  })();
+
+  private readonly currentUrl = toSignal(
     merge(
       of(this.router.url),
       this.router.events.pipe(
         filter((event): event is NavigationEnd => event instanceof NavigationEnd),
         map(() => this.router.url),
       ),
-    ).pipe(
-      map((url) => {
-        const trimmedUrl = url.replace(/^\//, '').split('?')[0];
-        return trimmedUrl || FIRST_LEVEL_SLUG;
-      }),
     ),
-    { initialValue: FIRST_LEVEL_SLUG },
+    { initialValue: this.router.url || `/${FIRST_LEVEL_SLUG}` },
   );
+  readonly presentationMode = signal(this.initialPresentationMode);
+
+  readonly levels = JOURNEY_LEVELS;
+  readonly totalLevels = JOURNEY_LEVELS.length;
+
+  private readonly currentSlug = computed(() => {
+    const trimmedUrl = this.currentUrl().replace(/^\//, '').split('?')[0];
+    return trimmedUrl || FIRST_LEVEL_SLUG;
+  });
 
   readonly currentLevel = computed<JourneyLevel>(() => {
     const matchedLevel = this.levels.find((level) => level.slug === this.currentSlug());
@@ -67,6 +88,13 @@ export class JourneyShellComponent {
   readonly progressWidth = computed(() => `${((this.currentIndex() + 1) / this.totalLevels) * 100}%`);
 
   constructor() {
+    effect(() => {
+      const enabled = this.presentationMode();
+      this.document.body.classList.toggle('presentation-mode', enabled);
+      this.document.documentElement.classList.toggle('presentation-mode', enabled);
+      this.document.defaultView?.localStorage.setItem(this.storageKey, String(enabled));
+    });
+
     const handleKeydown = (event: KeyboardEvent): void => {
       const target = event.target;
       const activeTagName = target instanceof HTMLElement ? target.tagName : '';
@@ -113,6 +141,10 @@ export class JourneyShellComponent {
 
   navigateTo(slug: string): void {
     void this.router.navigate(['/', slug]);
+  }
+
+  togglePresentationMode(): void {
+    this.presentationMode.update((value) => !value);
   }
 
   goPrevious(): void {

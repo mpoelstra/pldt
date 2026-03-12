@@ -1,12 +1,13 @@
 <div
   class="app-shell min-h-screen"
+  [class.presentation-mode]="presentationMode()"
   [class.theme-danger]="currentLevel().theme === 'danger'"
   [class.theme-victory]="currentLevel().theme === 'victory'"
 >
   <div class="scanline-overlay" aria-hidden="true"></div>
 
-  <header class="sticky top-0 z-20 border-b border-white/10 bg-[rgba(5,12,5,0.86)] backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-6">
+  <header class="shell-header sticky top-0 z-20 border-b border-white/10 bg-[rgba(5,12,5,0.86)] backdrop-blur">
+    <div class="shell-header__inner mx-auto flex items-center justify-between gap-4 px-4 py-4 lg:px-6">
       <div class="flex items-center gap-3 text-[var(--accent)]">
         <span class="material-symbols-outlined text-3xl">videogame_asset</span>
         <div>
@@ -37,12 +38,20 @@
             <div class="progress-bar h-full bg-[var(--accent)]" [style.width]="progressWidth()"></div>
           </div>
         </div>
+
+        <button
+          type="button"
+          class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[var(--accent)]"
+          (click)="togglePresentationMode()"
+        >
+          {{ presentationMode() ? 'Exit presentation' : 'Presentation mode' }}
+        </button>
       </div>
     </div>
   </header>
 
-  <main class="mx-auto grid max-w-7xl gap-6 px-4 py-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:px-6">
-    <aside class="space-y-6">
+  <main class="shell-main mx-auto grid gap-6 px-4 py-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:px-6">
+    <aside class="shell-aside space-y-6">
       @if (currentLevel().id === 0) {
         <section class="panel p-5">
           <div class="character-card">
@@ -130,19 +139,16 @@
 
     </aside>
 
-    <section class="space-y-6">
+    <section class="shell-content space-y-6">
       <router-outlet />
     </section>
 
     <section class="panel jump-bar jump-bar--bottom p-4 lg:col-span-2">
-      <div class="mb-3 flex items-center justify-between gap-3">
-        <div>
-          <p class="text-[10px] font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
-            Level Select
-          </p>
-          <h2 class="text-sm font-black uppercase text-white">Jump direct</h2>
-        </div>
-        <span class="material-symbols-outlined text-xl text-[var(--accent)]">map</span>
+      <div class="mb-2 flex items-center justify-between gap-3">
+        <p class="text-[10px] font-black uppercase tracking-[0.28em] text-[var(--accent-soft)]">
+          Level Select
+        </p>
+        <span class="material-symbols-outlined jump-bar__icon text-[var(--accent)]">map</span>
       </div>
 
       <nav class="jump-bar__nav" aria-label="Level selection">
@@ -152,7 +158,9 @@
             [class.active]="level.slug === currentLevel().slug"
             [routerLink]="['/', level.slug]"
           >
-            <span class="text-[10px] font-black uppercase tracking-[0.2em]">{{ level.levelLabel }}</span>
+            <span class="text-[10px] font-black uppercase tracking-[0.2em]">
+              {{ level.levelLabel }}@if (level.arcLabel) { - {{ level.arcLabel }} }
+            </span>
             <span class="mt-1 block text-base font-semibold leading-tight">{{ level.title }}</span>
           </a>
         }

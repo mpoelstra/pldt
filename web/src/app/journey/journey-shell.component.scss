@@ -1,3 +1,117 @@
 :host {
   display: block;
 }
+
+.shell-header__inner,
+.shell-main {
+  width: min(100%, 96rem);
+}
+
+.jump-bar {
+  width: 100%;
+}
+
+.jump-bar__icon {
+  font-size: 1rem;
+}
+
+.jump-bar__nav {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.jump-bar__link {
+  min-height: 0;
+  padding: 0.6rem 0.7rem;
+}
+
+.jump-bar__link span:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  line-height: 1.15;
+}
+
+.app-shell.presentation-mode {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.app-shell.presentation-mode .shell-main {
+  min-height: 0;
+  height: 100%;
+  width: min(100%, 92rem);
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-content: start;
+  overflow: hidden;
+}
+
+.app-shell.presentation-mode .shell-header__inner {
+  width: min(100%, 92rem);
+  max-width: none;
+}
+
+.app-shell.presentation-mode .shell-aside,
+.app-shell.presentation-mode .shell-content {
+  min-height: 0;
+}
+
+.app-shell.presentation-mode .shell-content {
+  overflow: auto;
+  padding-right: 0.25rem;
+  scrollbar-width: thin;
+}
+
+.app-shell.presentation-mode .shell-header__inner {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+.app-shell.presentation-mode .shell-header h1 {
+  font-size: 0.95rem;
+}
+
+.app-shell.presentation-mode .shell-aside {
+  gap: 0.9rem;
+}
+
+.app-shell.presentation-mode .shell-content {
+  gap: 0.9rem;
+}
+
+.app-shell.presentation-mode .jump-bar {
+  width: 100%;
+  padding: 0.7rem 0.9rem !important;
+}
+
+.app-shell.presentation-mode .jump-bar__nav {
+  gap: 0.55rem;
+}
+
+.app-shell.presentation-mode .jump-bar__link {
+  min-height: 0;
+  padding: 0.55rem 0.7rem;
+}
+
+.app-shell.presentation-mode .jump-bar__link span:last-child {
+  font-size: 0.82rem;
+}
+
+@media (min-width: 1024px) {
+  .app-shell.presentation-mode .shell-main {
+    grid-template-columns: 16rem minmax(0, 1fr);
+    gap: 0.9rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .app-shell.presentation-mode .shell-main,
+  .app-shell.presentation-mode .shell-header__inner {
+    width: min(100%, 96rem);
+  }
+}
